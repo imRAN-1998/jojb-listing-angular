@@ -1,0 +1,305 @@
+.header{
+    width:100%;
+    height:150px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: hsl(180, 29%, 50%);
+}
+.header-img{
+    transform: scale(1.1,1);
+    /* object-fit:contain; */
+}
+.mob{
+    display: none;
+}
+
+.filter{
+    width: 80%;
+    overflow: hidden;
+    /* border:1px solid red; */
+    padding:20px 40px;
+    position: absolute;
+    left:50%;
+    top:150px;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 5px 1px hsl(180, 57%, 89%), 1px 3px 5px lightgray;
+    display: flex;
+    font-family: 'Spartan', sans-serif;
+    
+}
+.w-20{
+    padding:10px 10px 10px 10px;
+    width: 20%;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.w-20 span{
+    cursor: pointer;
+    color :hsl(180, 29%, 50%);
+    position: relative;
+}
+.w-20 span::before{
+    content:"";
+    background-color: hsl(180, 29%, 50%);
+    padding:0px;
+    width: 0%;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transition:0.3s width;
+    transform: translate(-50%,-50%);
+}
+.w-20 div:hover span::before {
+    padding: 1.5px;
+    width:100%;
+}
+/* .w-20 span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+} */
+
+
+
+.w-80{
+    width:80%;
+    padding:0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.w-80 button{
+    border:none;
+    background-color: transparent;
+    display: flex;
+}
+.w-80 > div{
+    margin-right:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.w-80 button button:nth-child(1), .w-80 button button:nth-child(2){
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: hsl(180, 29%, 50%);
+}
+.w-80 button button:nth-child(1){
+    background-color:  hsl(180, 52%, 96%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.w-80 button button:nth-child(2){
+    background-color:  hsl(180, 29%, 50%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    padding:11px 10px;
+}
+.w-80 button button:nth-child(2):hover{
+    background-color:  hsl(180, 14%, 20%);
+}
+
+
+.container{
+    width:80%;
+    margin:30px auto;
+    padding-top:50px;
+    position: relative;
+    font-family: 'Spartan', sans-serif;
+    /* border: 1px solid red; */
+}
+
+.box{
+    width:100%;
+    padding:35px;
+    /* display: flex; */
+    background-color: white;
+    transition: 0.3s all;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 1px 5px 20px hsl(180, 57%, 89%), 1px 3px 20px lightgray;
+    /* border-left:5px solid hsl(180, 30%, 67%); */
+    border-radius: 5px;
+}
+.box .mob-img{
+    display: none;
+    position: absolute;
+    z-index: 50;
+    top:0%;
+    left:100%;
+    transform: translate(10%,-50%)scale(0.6,0.6);
+}
+.box:hover{
+    /* transform: scale(1,1.1); */
+    box-shadow: 1px 5px 20px hsl(180, 53%, 82%);
+
+}
+.job-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.job-role{
+    width:35%;
+    margin-left: 20px;
+}
+.job-role > div:nth-child(1){
+    font-weight: 700;
+    color: hsl(180, 29%, 50%);
+    display: flex;
+    margin-bottom: 13px;
+    font-size: 14px;
+}
+
+.job-role > div:nth-child(1) div:nth-child(2), .job-role > div:nth-child(1) div:nth-child(3){
+    color: white;
+    font-size: 13px;
+    padding:5px 5px 3px 5px;
+    border-radius: 25px;
+}
+.job-role > div:nth-child(1) div:nth-child(2){
+    width:55px;
+    background-color: hsl(180, 29%, 50%);
+    display: flex;
+    justify-content: center;
+    margin-left:20px;
+}
+.job-role > div:nth-child(1) div:nth-child(3){
+    width:90px;
+    display: flex;
+    justify-content: center;
+    background-color: hsl(180, 14%, 20%);
+    margin-left:7px;
+}
+
+.job-role > div:nth-child(2):hover {
+    color:hsl(180, 29%, 50%);
+    cursor: pointer;
+}
+
+.job-role > div:nth-child(3) {
+    display: flex;
+    margin-top: 12px;
+    color:hsl(180, 8%, 52%);
+    font-size:15px;
+}
+
+.lang{
+    padding: 10px;
+    width:65%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.lang button{
+    border : none;
+    background-color:  hsl(180, 52%, 96%);
+    color:hsl(180, 29%, 50%);
+    padding:10px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left:20px;
+    outline: none;
+}
+.lang button:hover{
+    color: hsl(180, 52%, 96%) ;
+    cursor: pointer;
+    background-color: hsl(180, 29%, 50%);
+}
+.hr-line{
+    display: none;
+}
+.mob1{
+    display: none;
+}
+
+@media(max-width:750px){
+    .hr-line{
+        margin:20px 0;
+        display: block;
+    }
+    .filter{
+        width: 90%;
+        padding:20px 15px;
+    }
+    .w-80 > div{
+        margin-top:5px;
+        margin-bottom:5px;
+    }
+    .container{
+        width: 90%;
+    }
+    .box{
+        padding:40px 20px 20px 20px;
+        margin-bottom: 40px;
+    }
+    .box img{
+        display: none;
+    }
+    .box .mob-img{
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .job-details{
+        display: block;
+    }
+    .job-role{
+        width:100%;
+        margin-left: 0px;
+    }
+    .job-role h3{
+        font-size: 15px;
+    }
+    .job-role > div:nth-child(3) {
+        font-size:12px;
+    }
+    .lang{
+        width:100%;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    .lang button{
+        margin-left:0;
+        margin-right:10px;
+        margin-bottom:10px;
+    }
+    .mob1{
+        display: block;
+    }
+}
+@media(max-width:900px){
+    .header-img{
+        transform: scale(0.68,1);
+    }
+}
+@media(max-width:700px){
+    .header-img{
+        transform: scale(0.55,1);
+    }
+}
+@media(max-width:500px){
+    .header-img{
+        transform: scale(0.4,1);
+    }
+}
+@media(max-width:400px){
+    .mob{
+        display:block;
+        transform: scale(1,1.2);
+    }
+    .desk{
+        display: none;
+    }
+}

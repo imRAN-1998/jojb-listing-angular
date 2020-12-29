@@ -1,0 +1,53 @@
+<div class="header">
+  <img src="../assets/images/bg-header-desktop.svg" class="header-img desk" alt="no-image">
+  <img src="../assets/images/bg-header-mobile.svg" class="header-img mob" alt="no-image">
+</div>
+<div style="margin-top:70px" class="mob1" *ngIf="unique_skills.length > 2"></div>
+<div style="margin-top:120px" class="mob" *ngIf="unique_skills.length > 3"></div>
+<div class="filter" *ngIf="unique_skills.length != 0">
+  <div class="w-80" [@skills]="unique_skills.length">
+    <div *ngFor= "let selectedskill of unique_skills;let i=index;">
+      <button>
+        <button>{{selectedskill}}</button>
+        <button (click)="removeSkill(i)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#FFF" fill-rule="evenodd" d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"/></svg>
+        </button>
+      </button>
+    </div>
+  </div>
+  <div class="w-20">
+    <div (click)="clearSkills()">
+      <span>Clear</span>
+    </div>
+  </div>
+</div>
+
+<div class="container" [@lists]="jobsList.length">
+
+  <div class="box" *ngFor="let job of jobsList;" 
+  [ngStyle]="{'border-left' : job.featured ?  '5px solid hsl(180, 29%, 50%)' : '5px solid white'}">
+  <img [src]="job.logo" alt="no-image" class="mob-img">
+    <!-- <div class="mob-img">
+    </div> -->
+    <div class="job-details">
+      <img [src]="job.logo" alt="no-image">
+      <div class="job-role">
+        <div>
+          <div style="margin-top:3px">{{job.company}}</div>
+          <div *ngIf= "job.new"><span>NEW!</span></div>
+          <div *ngIf="job.featured"><span>FEATURED</span></div>
+        </div>
+        <div>
+          <h3>{{job.position}}</h3>
+        </div>
+        <div>
+          <div>{{job.postedAt}} &nbsp; &nbsp; &nbsp;<span style="margin-bottom:10px;vertical-align: baseline;position: relative;"><span style="position: absolute;top:-3px;left:-5px"><strong>.</strong></span></span>&nbsp; &nbsp; {{job.contract}}&nbsp; &nbsp; &nbsp; <span style="margin-bottom:10px;vertical-align: baseline;position: relative;"><span style="position: absolute;top:-3px;left:-5px"><strong>.</strong></span></span>&nbsp;&nbsp; &nbsp;{{job.location}}</div>
+        </div>
+      </div>
+      <hr class="hr-line">
+      <div class="lang">
+        <button *ngFor="let skill of job.languages" [value]="skill"(click)="selectSkill($event.target.value)">{{skill}}</button>
+      </div>
+    </div>
+  </div>
+</div>
